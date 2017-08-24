@@ -9,22 +9,24 @@ class App extends Component {
     super(props);
 
     this.state = {
-      nearby: []
+      profiles: []
     };
     this.onPutRequest = this.onPutRequest.bind(this);
   }
 
-  onPutRequest(nearby) {
+  onPutRequest(profiles) {
     get(`http://localhost:3000/profiles`)
     .then(({ data }) => {
-      this.setState({ nearby: data.data }); //this is verbose because Rails should spit out the raw array
+      this.setState({ profiles: data.data }); //this is verbose because Rails should spit out the raw array
     });
   }
 
   render() {
+    const { profiles } = this.state;
+
     return (
       <main>
-        <NearbyList />
+        <NearbyList profiles={profiles}/>
         <button onClick={this.onPutRequest}>Put request</button>
       </main>
     );
