@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { get } from 'axios';
-// import './App.css';
+import './App.css';
 import NearbyList from './components/NearbyList'
 
 class App extends Component {

@@ -6,9 +6,9 @@ class NearbyList extends React.Component {
     const { profiles } = this.props;
 
     return (
-      <div>
+      <div id='nearby-list'>
         <h2>Nearby List</h2>
-        <ul id='nearby-list'>
+        <ul>
             {profiles.map((profile) =>
               <ProfileListing
                 key={profile.id}

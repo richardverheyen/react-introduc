@@ -5,8 +5,8 @@ class ProfileListing extends React.Component {
     const { attributes } = this.props;
     return (
       <li>
-        <p>{ attributes.tagline }</p>
         <img src={ attributes.image }/>
+        <p>{ attributes.tagline }</p>
       </li>
     );
   }
