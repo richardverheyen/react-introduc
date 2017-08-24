@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { get } from 'axios';
+// import './App.css';
+import NearbyList from './components/NearbyList'
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      nearby: []
+    };
+    this.onPutRequest = this.onPutRequest.bind(this);
+  }
+
+  onPutRequest(nearby) {
+    get(`http://localhost:3000/profiles`)
+    .then(({ data }) => {
+      this.setState({ nearby: data.data }); //this is verbose because Rails should spit out the raw array
+    });
+  }
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <main>
+        <NearbyList />
+        <button onClick={this.onPutRequest}>Put request</button>
+      </main>
     );
   }
 }
