@@ -3,7 +3,7 @@ import ProfileListing from './ProfileListing';
 
 class NearbyList extends React.Component {
   render() {
-    const { profiles } = this.props;
+    const { profiles, onProfileClicked } = this.props;
 
     return (
       <div id='nearby-list'>
@@ -13,6 +13,7 @@ class NearbyList extends React.Component {
               <ProfileListing
                 key={profile.id}
                 attributes={profile.attributes}
+                onProfileClicked={onProfileClicked}
               />
             )}
         </ul>

@@ -11,9 +11,15 @@ class App extends Component {
     super(props);
 
     this.state = {
-      profiles: []
+      profiles: [],
+      selectedProfile: ''
     };
     this.onPutRequest = this.onPutRequest.bind(this);
+    this.onProfileClicked = this.onProfileClicked.bind(this);
+  }
+
+  onProfileClicked(attributes) {
+    this.setState({ selectedProfile: attributes });
   }
 
   onPutRequest(profiles) {
@@ -28,7 +34,7 @@ class App extends Component {
 
     return (
       <main>
-        <NearbyList profiles={profiles}/>
+        <NearbyList profiles={profiles} onProfileClicked={this.onProfileClicked}/>
         <button onClick={this.onPutRequest}>Put request</button>
       </main>
     );
