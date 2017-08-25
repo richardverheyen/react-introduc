@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { get } from 'axios';
 import './App.css';
-import NearbyList from './components/NearbyList'
+
+import NearbyList from './components/NearbyList';
+import SelectedProfile from './components/SelectedProfile';
 
 class App extends Component {
 

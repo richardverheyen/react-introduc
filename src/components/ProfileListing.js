@@ -5,7 +5,7 @@ class ProfileListing extends React.Component {
     const { attributes } = this.props;
     return (
       <li>
-        <img src={ attributes.image }/>
+        <img src={ attributes.image } alt="nearby profile introduc"/>
         <p>{ attributes.tagline }</p>
       </li>
     );
