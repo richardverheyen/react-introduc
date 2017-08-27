@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { get } from 'axios';
 import './App.css';
 
-import NearbyList from './components/NearbyList';
-import SelectedProfile from './components/SelectedProfile';
+import MainPage from './components/MainPage'
 
 class App extends Component {
 
@@ -11,10 +9,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      profiles: [],
       selectedProfile: ''
     };
-    this.onPutRequest = this.onPutRequest.bind(this);
     this.onProfileClicked = this.onProfileClicked.bind(this);
   }
 
@@ -22,20 +18,12 @@ class App extends Component {
     this.setState({ selectedProfile: attributes });
   }
 
-  onPutRequest(profiles) {
-    get(`http://localhost:3000/profiles`)
-    .then(({ data }) => {
-      this.setState({ profiles: data.data }); //this is verbose because Rails should spit out the raw array
-    });
-  }
-
   render() {
-    const { profiles } = this.state;
+    const { selectedProfile } = this.state;
 
     return (
       <main>
-        <NearbyList profiles={profiles} onProfileClicked={this.onProfileClicked}/>
-        <button onClick={this.onPutRequest}>Put request</button>
+        <MainPage onProfileClicked={this.onProfileClicked}/>
       </main>
     );
   }
