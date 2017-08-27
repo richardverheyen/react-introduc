@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import {Link} from 'react-router-dom'
+
 import MainPage from './components/MainPage'
 import SelectedProfile from './components/SelectedProfile'
 
@@ -24,8 +26,8 @@ class App extends Component {
 
     return (
       <main>
-        <MainPage onProfileClicked={this.onProfileClicked}/>
-        <SelectedProfile attributes={selectedProfile}/>
+        <Link to='/home'> Home </Link>
+        <Link to='/profile'>Profile</Link>
       </main>
     );
   }
