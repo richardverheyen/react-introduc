@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import MainPage from './components/MainPage'
+import SelectedProfile from './components/SelectedProfile'
 
 class App extends Component {
 
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <main>
         <MainPage onProfileClicked={this.onProfileClicked}/>
+        <SelectedProfile attributes={selectedProfile}/>
       </main>
     );
   }

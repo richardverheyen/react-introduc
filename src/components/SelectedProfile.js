@@ -4,7 +4,7 @@ class SelectedProfile extends React.Component {
 
 
   render(){
-    const { image, tagline } = this.props;
+    const { image, tagline } = this.props.attributes;
 
     return(
       <div id="selected-profile">

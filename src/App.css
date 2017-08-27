@@ -1,9 +1,11 @@
 #nearby-list h2 {
   padding-left: 20px;
 }
+
 #nearby-list ul {
   padding-left: 0;
 }
+
 #nearby-list ul li {
   display: flex;
   justify-content: space-between;
@@ -12,12 +14,27 @@
   list-style: none;
   margin: 5px 10px;
 }
+
 #nearby-list ul li p {
   font-size: 14px;
 }
+
 #nearby-list ul li img {
   max-height: 70px;
   width: auto;
   border-radius: 100%;
   margin-right: 10px;
+}
+
+#selected-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#selected-profile img {
+  width: 90vw;
+  max-width: 400px;
+  margin: auto;
 }
