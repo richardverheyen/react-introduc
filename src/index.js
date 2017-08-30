@@ -9,6 +9,8 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import reducer from './reducer';
+import { getProfiles } from './reducer/profiles/actions';
+
 
 //Extra
 import './index.css';
@@ -18,6 +20,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(
   applyMiddleware(thunk),
 ));
+
+store.dispatch(getProfiles());
 
 // Create app
 const container = document.querySelector('#root');
