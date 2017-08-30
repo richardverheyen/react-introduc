@@ -1,5 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import ProfileListing from './ProfileListing';
+
 
 class NearbyList extends React.Component {
   render() {
@@ -22,4 +25,8 @@ class NearbyList extends React.Component {
   }
 }
 
-export default NearbyList;
+const mapStateToProps = ({ profiles }) => ({
+  profiles,
+});
+
+export default connect(mapStateToProps)(NearbyList);
