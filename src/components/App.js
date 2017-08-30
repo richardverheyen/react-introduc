@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { get } from 'axios';
-import './App.css';
+import '../App.css';
 
-import MainPage from './components/MainPage'
-import SelectedProfile from './components/SelectedProfile'
+import MainPage from './MainPage'
+import SelectedProfile from './SelectedProfile'
 
 class App extends Component {
 

@@ -2,6 +2,12 @@
   "name": "react-introduc",
   "version": "0.1.0",
   "private": true,
+  "main": "index.js",
+  "author": "Richard Verheyen",
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack-dev-server --hot --inline --content-base ./src --open"
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "babel-core": "^6.26.0",
