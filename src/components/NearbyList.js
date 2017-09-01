@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 import { setSelectedProfile } from '../reducer/profile/actions';
 
 import ProfileListing from './ProfileListing';
@@ -12,7 +13,9 @@ const NearbyList = ({ profiles, setProfile }) =>
           <li
             key={p.id}
             onClick={ setProfile(p.id) }>
-            <ProfileListing attributes={p.attributes}/>
+            <Link to={`/profile`}>
+              <ProfileListing attributes={p.attributes}/>
+            </Link>
           </li>
         )}
     </ul>

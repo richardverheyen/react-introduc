@@ -15,6 +15,11 @@
   background: #eee;
 }
 
+#nearby-list ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
 #nearby-list ul li div {
   display: flex;
   justify-content: space-between;
