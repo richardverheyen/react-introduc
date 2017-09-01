@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
-import { setSelectedProfile } from '../reducer/profile/actions';
+import { setSelectedProfile } from '../reducer/selectedProfile/actions';
 
 import ProfileListing from './ProfileListing';
 
@@ -12,7 +12,7 @@ const NearbyList = ({ profiles, setProfile }) =>
         {profiles.map((p) =>
           <li
             key={p.id}
-            onClick={ setProfile(p.id) }>
+            onClick={ setProfile(p) }>
             <Link to={`/profile`}>
               <ProfileListing attributes={p.attributes}/>
             </Link>
@@ -26,9 +26,9 @@ const mapStateToProps = ({ profiles }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setProfile(id) { //creates a closure
+  setProfile(data) { //creates a closure
     return () => {
-      dispatch(setSelectedProfile(id));
+      dispatch(setSelectedProfile(data));
     };
   },
 });

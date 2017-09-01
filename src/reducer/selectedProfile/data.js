@@ -5,7 +5,7 @@ const initialState = 0;
 export default (state = initialState, action) => {
   switch (action.type) {
     case SET_SELECTED_PROFILE:
-      return action.id;
+      return action.data;
     default:
       return state;
   }

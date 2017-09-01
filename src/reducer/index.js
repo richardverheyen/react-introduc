@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import profiles from './profiles';
-import profile from './profile';
+import selectedProfile from './selectedProfile';
 
 export default combineReducers({
   profiles,
-  profile
+  selectedProfile
 });

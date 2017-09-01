@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import id from './id';
+import data from './data';
 
 export default combineReducers({
-  id
+  data
 });

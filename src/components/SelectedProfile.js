@@ -1,11 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const SelectedProfile = ({profile}) =>
-  <h1>{profile.id}</h1>
+const SelectedProfile = ({selectedProfile}) =>
+  <div>
+    <img src={selectedProfile.data.attributes.image} alt="nearby profile introduc"/>
+    <p>{selectedProfile.data.attributes.tagline}</p>
+  </div>
 
-const mapStateToProps = ({ profile }) => ({
-  profile
+const mapStateToProps = ({ selectedProfile }) => ({
+  selectedProfile
 });
 
 export default connect(mapStateToProps)(SelectedProfile);
