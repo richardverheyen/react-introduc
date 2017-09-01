@@ -7,23 +7,34 @@
 }
 
 #nearby-list ul li {
+  list-style: none;
+  cursor: pointer;
+}
+
+#nearby-list ul li:hover {
+  background: #eee;
+}
+
+#nearby-list ul li div {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 5px 0;
+  padding: 0 10px;
   text-align: right;
-  list-style: none;
-  margin: 5px 10px;
 }
 
-#nearby-list ul li p {
+#nearby-list ul li div p {
   font-size: 14px;
+  user-select: none;
 }
 
-#nearby-list ul li img {
+#nearby-list ul li div img {
   max-height: 70px;
   width: auto;
   border-radius: 100%;
   margin-right: 10px;
+  user-select: none;
 }
 
 #selected-profile {
