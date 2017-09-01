@@ -1,38 +1,52 @@
+h1,
+h2,
+h3 {
+  font-family: 'Questrial', sans-serif; }
+
+p {
+  font-family: 'Raleway', sans-serif; }
+
+@font-face {
+  font-family: 'Raleway-Light';
+  src: url("/fonts/Raleway-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Questrial-Regular';
+  src: url("/fonts/Questrial-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 #nearby-list h2 {
   padding-left: 20px; }
 
 #nearby-list ul {
   padding-left: 0; }
-
-#nearby-list ul li {
-  list-style: none;
-  cursor: pointer; }
-
-#nearby-list ul li:hover {
-  background: #eee; }
-
-#nearby-list ul li a {
-  text-decoration: none;
-  color: inherit; }
-
-#nearby-list ul li div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 5px 0;
-  padding: 0 10px;
-  text-align: right; }
-
-#nearby-list ul li div p {
-  font-size: 14px;
-  user-select: none; }
-
-#nearby-list ul li div img {
-  max-height: 70px;
-  width: auto;
-  border-radius: 100%;
-  margin-right: 10px;
-  user-select: none; }
+  #nearby-list ul li {
+    list-style: none;
+    cursor: pointer; }
+    #nearby-list ul li:hover {
+      background: #eee; }
+    #nearby-list ul li a {
+      text-decoration: none;
+      color: inherit; }
+    #nearby-list ul li div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 5px 0;
+      padding: 0 10px;
+      text-align: right; }
+      #nearby-list ul li div p {
+        font-size: 14px;
+        user-select: none; }
+      #nearby-list ul li div img {
+        max-height: 70px;
+        width: auto;
+        border-radius: 100%;
+        margin-right: 10px;
+        user-select: none; }
 
 #selected-profile {
   display: flex;
@@ -40,22 +54,18 @@
   justify-content: center;
   align-items: center;
   position: relative; }
-
-#selected-profile > img {
-  width: 82vw;
-  max-width: 400px;
-  margin: 60px auto auto;
-  border-radius: 100%; }
-
-#selected-profile p {
-  text-align: center;
-  margin-top: 30px;
-  max-width: 90vw; }
-
-#selected-profile a {
-  position: absolute;
-  top: 5px;
-  right: 10px; }
-
-#selected-profile a img {
-  width: 5vw; }
+  #selected-profile > img {
+    width: 82vw;
+    max-width: 400px;
+    margin: 60px auto auto;
+    border-radius: 100%; }
+  #selected-profile p {
+    text-align: center;
+    margin-top: 30px;
+    max-width: 90vw; }
+  #selected-profile a {
+    position: absolute;
+    top: 5px;
+    right: 10px; }
+    #selected-profile a img {
+      width: 5vw; }
