@@ -14,7 +14,6 @@ import { getProfiles } from './reducer/profiles/actions';
 
 
 //Extra
-import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
