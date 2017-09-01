@@ -5,11 +5,12 @@
   "main": "index.js",
   "author": "Richard Verheyen",
   "scripts": {
-    "build": "webpack",
-    "serve": "webpack-dev-server --hot --inline --content-base ./src --open"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
-    "axios": "^0.16.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
@@ -19,6 +20,7 @@
     "react-dom": "^15.6.1",
     "react-hot-loader": "3.0.0-beta.6",
     "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "webpack": "2.1.0-beta.27",
@@ -26,11 +28,5 @@
   },
   "devDependencies": {
     "react-scripts": "1.0.11"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
   }
 }

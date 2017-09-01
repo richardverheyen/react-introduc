@@ -7,7 +7,7 @@ class MainPage extends React.Component {
     const { onProfileClicked, profiles } = this.props;
 
     return(
-      <div>
+      <div id="main-page">
         <NearbyList profiles={profiles} onProfileClicked={onProfileClicked}/>
       </div>
     )
