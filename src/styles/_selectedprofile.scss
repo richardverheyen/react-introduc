@@ -4,23 +4,41 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 100vw;
+  height: 100vh;
   > img {
     width: 82vw;
-    max-width: 400px;
-    margin: 60px auto auto;
+    max-width: 300px;
+    margin: 60px auto 20px;
     border-radius: 100%;
   }
   p {
     text-align: center;
-    margin-top: 30px;
+    margin: 30px auto;
     max-width: 90vw;
   }
-  a {
+  a.return {
     position: absolute;
-    top: 5px;
+    top: 10px;
     right: 10px;
     img {
       width: 5vw;
+      max-width: 15px;
+    }
+  }
+  #ping-button {
+    text-align: center;
+    padding: 15px 0;
+    text-transform: uppercase;
+    background-color: $rubber-ducky;
+    width: 84vw;
+    max-width: 340px;
+    letter-spacing: 1.5px;
+    margin-bottom: auto;
+    user-select: none;
+    cursor: pointer;
+    &:hover {
+      background-color: darken($rubber-ducky, 10%);
     }
   }
 }

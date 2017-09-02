@@ -1,5 +1,6 @@
 import React from 'react';
-import NearbyList from './NearbyList'
+import { Link } from 'react-router-dom';
+import NearbyList from './NearbyList';
 
 class MainPage extends React.Component {
 
@@ -7,9 +8,11 @@ class MainPage extends React.Component {
     const { onProfileClicked, profiles } = this.props;
 
     return(
-      <div id="main-page">
+      <section id="main-page">
+        <Link to={`/user`} id="customise-button"><img src="/img/arrow-down-big.svg" alt=""/></Link>
+        <img id="map-placeholder" src="map-placeholder.png" alt=""/>
         <NearbyList profiles={profiles} onProfileClicked={onProfileClicked}/>
-      </div>
+      </section>
     )
   }
 }

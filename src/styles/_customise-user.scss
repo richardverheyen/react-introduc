@@ -1,0 +1,9 @@
+#customise-user {
+  .return {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 40px;
+    transform: translateX(-50%) rotatex(180deg);
+  }
+}

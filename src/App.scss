@@ -1,5 +1,8 @@
+//Global stylesheets
 @import 'styles/_common.scss';
 @import 'styles/_fonts.scss';
 @import 'styles/_variables.scss';
+//Page specific stylesheets
 @import 'styles/_mainpage.scss';
 @import 'styles/_selectedprofile.scss';
+@import 'styles/_customise-user.scss';
