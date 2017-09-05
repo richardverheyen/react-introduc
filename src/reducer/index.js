@@ -4,5 +4,6 @@ import selectedProfile from './selectedProfile';
 
 export default combineReducers({
   profiles,
-  selectedProfile
+  selectedProfile,
+  currentUser
 });

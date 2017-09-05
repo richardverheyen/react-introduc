@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class CustomiseUser extends Component {
+class CurrentUser extends Component {
 
   constructor(props) {
     super(props);
@@ -53,4 +53,4 @@ class CustomiseUser extends Component {
   }
 }
 
-export default CustomiseUser
+export default CurrentUser

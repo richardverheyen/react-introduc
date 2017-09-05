@@ -14,7 +14,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={MainPage}/>
           <Route path='/profile' component={SelectedProfile}/>
-          <Route path='/user' component={CustomiseUser}/>
+          <Route path='/user' component={CurrentUser}/>
         </Switch>
       </main>
     );
