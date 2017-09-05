@@ -1,9 +1,47 @@
 #customise-user {
+  width: 100vw;
+  height: 100vh;
   .return {
     position: absolute;
     bottom: 8px;
     left: 50%;
     width: 40px;
     transform: translateX(-50%) rotatex(180deg);
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-left: 0;
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 30px auto;
+      input {
+        text-align: center;
+        margin: 0 auto;
+        border: 1px $light-grey solid;
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+    button {
+      margin: auto auto 60px;
+      font-size: 16px;
+      border: 1px solid $rubber-ducky;
+      background: $rubber-ducky;
+      border-radius: 5px;
+      padding: 5px 35px;
+      :hover {
+        background-color: darken($rubber-ducky, 10%);
+      }
+    }
   }
 }
