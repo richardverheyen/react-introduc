@@ -7,8 +7,8 @@ class CurrentUser extends Component {
     super(props);
 
     this.state = {
-      image: 'img/ewatson.jpg',
-      tagline: 'hello'
+      image: '',
+      tagline: ''
     };
     this.imageUpdated = this.imageUpdated.bind(this);
     this.taglineUpdated = this.taglineUpdated.bind(this);

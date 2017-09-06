@@ -4,7 +4,7 @@ import '../App.css';
 
 import MainPage from './MainPage';
 import SelectedProfile from './SelectedProfile';
-import CustomiseUser from './CustomiseUser';
+import CurrentUser from './CurrentUser';
 
 class App extends Component {
 
