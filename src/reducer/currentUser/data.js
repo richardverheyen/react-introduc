@@ -4,8 +4,8 @@ const initialState = {
   id: '',
   type: 'profile',
   attributes: {
-    image: '',
-    tagline: ''
+    image: '/img/estone.jpg',
+    tagline: 'Ill have a cortado please'
   }
 };
 

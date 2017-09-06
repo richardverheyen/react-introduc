@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+
 
 class CurrentUser extends Component {
+
 
   constructor(props) {
     super(props);
@@ -24,6 +28,8 @@ class CurrentUser extends Component {
   }
 
   render() {
+    const { currentUser } = this.state; //set currentUser from the store
+
     return (
     <section id="customise-user">
       <ul>
@@ -53,4 +59,8 @@ class CurrentUser extends Component {
   }
 }
 
-export default CurrentUser
+const mapStateToProps = ({ currentUser }) => ({
+  currentUser
+});
+
+export default connect(mapStateToProps)(CurrentUser)
