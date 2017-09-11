@@ -117,32 +117,32 @@ p {
     left: 50%;
     width: 40px;
     transform: translateX(-50%) rotatex(180deg); }
-  #customise-user ul {
+  #customise-user form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     padding-left: 0; }
-    #customise-user ul li {
+    #customise-user form div {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       margin: 30px auto; }
-      #customise-user ul li input {
+      #customise-user form div input {
         text-align: center;
         margin: 0 auto;
         border: 1px #f1f1f1 solid;
         font-size: 20px; }
-      #customise-user ul li p {
+      #customise-user form div p {
         font-size: 14px; }
-    #customise-user ul button {
+    #customise-user form button {
       margin: auto auto 60px;
       font-size: 16px;
       border: 1px solid #fecf4a;
       background: #fecf4a;
       border-radius: 5px;
       padding: 5px 35px; }
-      #customise-user ul button :hover {
+      #customise-user form button :hover {
         background-color: #fec217; }

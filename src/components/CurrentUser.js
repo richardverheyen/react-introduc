@@ -27,13 +27,18 @@ class CurrentUser extends Component {
     this.setState({ tagline: value });
   }
 
+  handleFormSubmit = (event) => {
+    event.preventDefault()
+    console.log('handleFormSubmit');
+  }
+
   render() {
     const { currentUser } = this.state; //set currentUser from the store
 
     return (
     <section id="customise-user">
-      <ul>
-        <li>
+      <form onSubmit={this.handleFormSubmit}>
+        <div>
           <p>upload your image here:</p>
           <input
             type="input"
@@ -41,8 +46,8 @@ class CurrentUser extends Component {
             name="image"
             value={this.state.image}
           />
-        </li>
-        <li>
+        </div>
+        <div>
           <p>upload your tagline here:</p>
           <input
             type="input"
@@ -50,9 +55,9 @@ class CurrentUser extends Component {
             name="tagline"
             value={this.state.tagline}
           />
-        </li>
-        <button className='post-button'>Post up to the server</button>
-      </ul>
+        </div>
+        <button type="submit" className='post-button'>Post up to the server</button>
+      </form>
       <Link to={`/`} className="return"><img src="/img/arrow-down-big.svg" alt=""/></Link>
     </section>
     )
