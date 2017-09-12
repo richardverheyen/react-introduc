@@ -1,6 +1,12 @@
-import { combineReducers } from 'redux';
-import data from './data';
+import { SET_CURRENT_USER } from './actions'; //import the "actions costant" from our ./actions file
 
-export default combineReducers({
-  data
-})
+const initialState = {}; //create a variable to hold our initial state, before we change it
+
+export default (state = initialState, action) => {
+  switch (action.type) { //compares the actions type with each of the cases
+    case SET_CURRENT_USER:
+      return action.data;
+    default:
+      return state;
+  }
+};

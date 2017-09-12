@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
-
+import { setCurrentUser } from '../reducer/currentUser/actions';
 
 class CurrentUser extends Component {
 
@@ -29,7 +28,16 @@ class CurrentUser extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault()
-    console.log('handleFormSubmit');
+    const { sendToStore } = this.props;
+
+    sendToStore({
+      id: '',
+      type: 'profile',
+      attributes: {
+        image: this.state.image,
+        tagline: this.state.tagline
+      }
+    });
   }
 
   render() {
@@ -68,4 +76,12 @@ const mapStateToProps = ({ currentUser }) => ({
   currentUser
 });
 
-export default connect(mapStateToProps)(CurrentUser)
+const mapDispatchToProps = dispatch => ({
+  sendToStore(currentUser) {
+    dispatch(
+      setCurrentUser(currentUser)
+    );
+  }
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(CurrentUser)
