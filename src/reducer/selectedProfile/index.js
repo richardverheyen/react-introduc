@@ -1,6 +1,12 @@
-import { combineReducers } from 'redux';
-import data from './data';
+import { SET_SELECTED_PROFILE } from './actions';
 
-export default combineReducers({
-  data
-});
+const initialState = 0;
+
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case SET_SELECTED_PROFILE:
+      return action.data;
+    default:
+      return state;
+  }
+};
