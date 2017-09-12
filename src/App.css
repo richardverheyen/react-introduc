@@ -33,11 +33,20 @@ p {
     left: 50%;
     width: 40px;
     transform: translateX(-50%); }
-  #main-page #map-placeholder {
+  #main-page #map-wrapper {
+    position: relative;
     width: 84vw;
+    height: 84vw;
     max-width: 340px;
     border-radius: 100%;
-    margin: 30px auto 10px; }
+    margin: 30px auto 10px;
+    overflow: hidden; }
+    #main-page #map-wrapper #map {
+      position: absolute;
+      width: 84vw;
+      height: 84vw;
+      max-width: 340px;
+      z-index: -1; }
   #main-page #nearby-list h2 {
     padding-left: 20px;
     margin-bottom: 8px; }

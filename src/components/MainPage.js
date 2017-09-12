@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NearbyList from './NearbyList';
+import UserLocation from './UserLocation';
 
 class MainPage extends React.Component {
 
@@ -10,7 +11,7 @@ class MainPage extends React.Component {
     return(
       <section id="main-page">
         <Link to={`/user`} id="customise-button"><img src="/img/arrow-down-big.svg" alt=""/></Link>
-        <img id="map-placeholder" src="map-placeholder.png" alt=""/>
+        <UserLocation />
         <NearbyList profiles={profiles} onProfileClicked={onProfileClicked}/>
       </section>
     )
