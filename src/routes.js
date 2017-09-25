@@ -7,6 +7,7 @@ import { Route, IndexRoute } from 'react-router';
 import App from './App';
 import NearbyPage from './components/NearbyPage';
 import SelectedProfile from './components/SelectedProfile';
+import CurrentUser from './components/CurrentUser';
 
 /**
  * All routes go here.
@@ -16,5 +17,6 @@ export default (
   <Route path="/" component={App}>
     <IndexRoute component={NearbyPage} />
     <Route path="/profile" component={SelectedProfile} />
+    <Route path="/user" component={CurrentUser} />
   </Route>
 );
