@@ -1,6 +1,15 @@
 body {
   margin: 0;
-  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #efefef;
+}
+#root {
+  max-width: 380px;
+  margin: auto;
+  background: white;
+
 }
 h1,
 h2,

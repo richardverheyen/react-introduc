@@ -5,10 +5,10 @@ export const SET_PROFILES = 'SET_PROFILES'; //This is the constant or 'action' w
 
 export function getProfiles() { //This is the action called getProfiles
   return dispatch => {//This is where redux-thunk does its magic
-    fetch(`${API_URL}/profiles`)
-      .then(res => res.json())
-      .then(res => res.data)
-      .then(profiles =>
+    fetch(`${API_URL}/profiles`) //returns a promise
+      .then(res => res.json()) //convert from raw data to json
+      .then(res => res.data) //
+      .then(profiles => //start calling the res.data profiles and then run this function
         dispatch(setProfiles(profiles))
     );
   };

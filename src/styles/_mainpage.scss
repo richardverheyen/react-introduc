@@ -11,16 +11,17 @@
   }
   #map-wrapper {
     position: relative;
-    width: 84vw;
-    height: 84vw;
+    width: 84%;
+    height: 84%;
     max-width: 340px;
+    height: 340px;
     border-radius: 100%;
     margin: 30px auto 10px;
     overflow: hidden;
     #map {
       position: absolute;
-      width: 84vw;
-      height: 84vw;
+      width: 84%;
+      height: 84%;
       max-width: 340px;
       z-index: -1;
     }

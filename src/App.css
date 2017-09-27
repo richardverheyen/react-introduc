@@ -1,6 +1,14 @@
 body {
   margin: 0;
-  max-width: 500px; }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #efefef; }
+
+#root {
+  max-width: 380px;
+  margin: auto;
+  background: white; }
 
 h1,
 h2,
@@ -35,16 +43,17 @@ p {
     transform: translateX(-50%); }
   #main-page #map-wrapper {
     position: relative;
-    width: 84vw;
-    height: 84vw;
+    width: 84%;
+    height: 84%;
     max-width: 340px;
+    height: 340px;
     border-radius: 100%;
     margin: 30px auto 10px;
     overflow: hidden; }
     #main-page #map-wrapper #map {
       position: absolute;
-      width: 84vw;
-      height: 84vw;
+      width: 84%;
+      height: 84%;
       max-width: 340px;
       z-index: -1; }
   #main-page #nearby-list h2 {
