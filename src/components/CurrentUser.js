@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import { setCurrentUser } from '../reducer/currentUser/actions';
+import { setCurrentUser } from '../reducer/currentUser/actions';
 
 class CurrentUser extends Component {
 
@@ -26,28 +26,22 @@ class CurrentUser extends Component {
     this.setState({ tagline: value });
   }
 
-  // handleFormSubmit = (event) => {
-  //   event.preventDefault()
-  //   const { sendToStore } = this.props;
-  //
-  //   sendToStore({
-  //     id: '',
-  //     type: 'profile',
-  //     attributes: {
-  //       image: this.state.image,
-  //       tagline: this.state.tagline
-  //       // lat: document.position.coords.latitude,
-  //       // lng: document.position.coords.longitude
-  //     }
-  //   });
-  // }
+  handleFormSubmit = (event) => {
+    event.preventDefault()
+    const { sendToStore } = this.props;
+
+    sendToStore({
+      image: this.state.image,
+      tagline: this.state.tagline
+    });
+  }
 
   render() {
-    // const { currentUser } = this.state; //set currentUser from the store
+    const { currentUser } = this.state; //set currentUser from the store
 
     return (
     <section id="customise-user">
-      <form>
+      <form onSubmit={this.handleFormSubmit}>
         <div>
           <p>upload your image here:</p>
           <input
@@ -66,25 +60,24 @@ class CurrentUser extends Component {
             value={this.state.tagline}
           />
         </div>
-        <button  className='post-button'>Post up to the server</button>
+        <button type='submit' className='post-button'>Post up to the server</button>
       </form>
       <Link to={`/`} className="return"><img src="/img/arrow-down-big.svg" alt=""/></Link>
     </section>
     )
   }
 }
-//
-// const mapStateToProps = ({ currentUser }) => ({
-//   currentUser
-// });
-//
-// const mapDispatchToProps = dispatch => ({
-//   sendToStore(currentUser) {
-//     dispatch(
-//       setCurrentUser(currentUser)
-//     );
-//   }
-// });
 
-// export default connect(mapStateToProps,mapDispatchToProps)(CurrentUser)
-export default CurrentUser
+const mapStateToProps = ({ currentUser }) => ({
+  currentUser
+});
+
+const mapDispatchToProps = dispatch => ({
+  sendToStore(currentUser) {
+    dispatch(
+      setCurrentUser(currentUser)
+    );
+  }
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(CurrentUser)

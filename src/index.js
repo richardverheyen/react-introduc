@@ -10,7 +10,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import reducer from './reducer';
-import { getProfiles } from './reducer/profiles/actions';
 import { getUserLocation } from './reducer/currentUser/actions';
 
 
@@ -22,7 +21,7 @@ const store = createStore(reducer, composeEnhancers(
   applyMiddleware(thunk),
 ));
 
-store.dispatch(getUserLocation()); //get's the users location and call in nearby profiles when coords are received;
+store.dispatch(getUserLocation()); //get's the users location and call in nearby profiles when coords
 
 // Create app
 const container = document.querySelector('#root');
