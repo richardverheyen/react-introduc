@@ -1,19 +1,26 @@
-export const GET_CURRENT_USER = 'GET_CURRENT_USER';
-export const SET_CURRENT_USER = 'SET_CURRENT_USER';
+export const GET_USER_LOCATION = 'GET_USER_LOCATION';
+export const SET_USER_LOCATION = 'SET_USER_LOCATION';
 
-export function getCurrentUser() {
-  let profile = JSON.parse(window.localStorage.getItem("currentUser"));
-  return {
-    type: GET_CURRENT_USER,
-    profile
+
+export function getUserLocation() {
+  console.log('getting user location');
+  let coords = {};
+  return dispatch => {
+    navigator.geolocation.getCurrentPosition(pos => {
+      coords = {
+        lat: pos.coords.latitude,
+        lng: pos.coords.longitude
+      };
+      dispatch(setUserLocation(coords));
+      console.log(coords);
+    });
   };
-}
+};
 
-export function setCurrentUser(profile) {
-  window.localStorage.setItem('currentUser', JSON.stringify(profile));
-  console.log(profile);
+export function setUserLocation(coords) {
+  console.log('you made it!')
   return {
-    type: SET_CURRENT_USER,
-    profile
+    type: SET_USER_LOCATION,
+    coords,
   };
 }

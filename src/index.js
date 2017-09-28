@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import reducer from './reducer';
 import { getProfiles } from './reducer/profiles/actions';
-import { getCurrentUser } from './reducer/currentUser/actions';
+import { getUserLocation } from './reducer/currentUser/actions';
 
 
 //Extra
@@ -22,7 +22,7 @@ const store = createStore(reducer, composeEnhancers(
   applyMiddleware(thunk),
 ));
 
-store.dispatch(getCurrentUser()); //checks localStorage to see if there's a saved user profile
+store.dispatch(getUserLocation()); //checks localStorage to see if there's a saved user profile
 store.dispatch(getProfiles()); //grabs profiles from the API
 
 // Create app
