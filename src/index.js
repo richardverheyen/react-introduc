@@ -22,8 +22,7 @@ const store = createStore(reducer, composeEnhancers(
   applyMiddleware(thunk),
 ));
 
-store.dispatch(getUserLocation()); //checks localStorage to see if there's a saved user profile
-store.dispatch(getProfiles()); //grabs profiles from the API
+store.dispatch(getUserLocation()); //get's the users location and call in nearby profiles when coords are received;
 
 // Create app
 const container = document.querySelector('#root');
