@@ -11,6 +11,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import reducer from './reducer';
 import { getUserLocation } from './reducer/currentUser/actions';
+import { setCurrentUser } from './reducer/currentUser/actions';
 
 
 //Extra
@@ -22,6 +23,7 @@ const store = createStore(reducer, composeEnhancers(
 ));
 
 store.dispatch(getUserLocation()); //get's the users location and call in nearby profiles when coords
+store.dispatch(setCurrentUser(localStorage.getItem('currentUser')));
 
 // Create app
 const container = document.querySelector('#root');

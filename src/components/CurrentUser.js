@@ -74,7 +74,6 @@ const mapStateToProps = ({ currentUser }) => ({
 
 const mapDispatchToProps = dispatch => ({
   sendToStore(currentUser) {
-    console.log(currentUser);
     dispatch(
       setCurrentUser(currentUser)
     );

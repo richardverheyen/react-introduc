@@ -12,7 +12,7 @@ export function getUserLocation() {
         lat: pos.coords.latitude,
         lng: pos.coords.longitude
       };
-      localStorage.setItem('coords', coords);
+      localStorage.setItem('coords', JSON.stringify(coords));
       console.log({coords});
       dispatch(getProfiles(coords));
     });
@@ -20,6 +20,7 @@ export function getUserLocation() {
 };
 
 export function setCurrentUser(attributes) {
+  localStorage.setItem('currentUser', JSON.stringify(attributes));
   return {
     type: SET_CURRENT_USER,
     attributes
