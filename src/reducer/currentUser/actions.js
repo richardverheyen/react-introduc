@@ -16,6 +16,7 @@ export function getUserLocation() {
       };
       dispatch(setUserLocation(coords));
       dispatch(getProfiles());
+      localStorage.setItem('coords', coords);
       console.log(coords);
     });
   };

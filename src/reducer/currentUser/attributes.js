@@ -8,7 +8,7 @@ export default (state = initialState, action) => {
     case SET_USER_LOCATION:
       return action.coords;
     case SET_CURRENT_USER:
-      return action.attributes;
+      return state;
     default:
       return state;
   }
