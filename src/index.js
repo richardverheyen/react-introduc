@@ -23,7 +23,7 @@ const store = createStore(reducer, composeEnhancers(
 ));
 
 store.dispatch(getUserLocation()); //get's the users location and call in nearby profiles when coords
-store.dispatch(setCurrentUser(localStorage.getItem('currentUser')));
+store.dispatch(setCurrentUser(JSON.parse(localStorage.getItem('currentUser'))));
 
 // Create app
 const container = document.querySelector('#root');
