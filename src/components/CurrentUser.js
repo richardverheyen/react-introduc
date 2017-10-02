@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setCurrentUser } from '../reducer/currentUser/actions';
+import { postCurrentUser } from '../reducer/currentUser/actions';
 
 class CurrentUser extends Component {
 
@@ -75,7 +75,7 @@ const mapStateToProps = ({ currentUser }) => ({
 const mapDispatchToProps = dispatch => ({
   sendToStore(currentUser) {
     dispatch(
-      setCurrentUser(currentUser)
+      postCurrentUser(currentUser)
     );
   }
 });

@@ -12,6 +12,7 @@ import thunk from 'redux-thunk';
 import reducer from './reducer';
 import { getUserLocation } from './reducer/currentUser/actions';
 import { setCurrentUser } from './reducer/currentUser/actions';
+import { setUserId } from './reducer/currentUser/actions';
 
 
 //Extra
@@ -22,8 +23,14 @@ const store = createStore(reducer, composeEnhancers(
   applyMiddleware(thunk),
 ));
 
-store.dispatch(getUserLocation()); //get's the users location and call in nearby profiles when coords
-store.dispatch(setCurrentUser(JSON.parse(localStorage.getItem('currentUser'))));
+// TODO: what's the best way to do this?
+let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+store.dispatch(setCurrentUser(currentUser.attributes));
+store.dispatch(setUserId(currentUser.id));
+if (currentUser.id) { //if there's a currentUser, update their location and call in nearby profiles
+  store.dispatch(getUserLocation(currentUser.id));
+}
+
 
 // Create app
 const container = document.querySelector('#root');
