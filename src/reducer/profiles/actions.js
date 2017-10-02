@@ -3,6 +3,19 @@ import { API_URL } from '../../constants';
 export const SET_PROFILES = 'SET_PROFILES'; //This is the constant or 'action' which is used by the reducer
 //An action is a plain object describing what happened.
 
+export function getUserLocation(id) {
+  return dispatch => {
+    navigator.geolocation.getCurrentPosition(pos => {
+      let coords = {
+        lat: pos.coords.latitude,
+        lng: pos.coords.longitude
+      };
+      localStorage.setItem('coords', JSON.stringify(coords));
+      dispatch(getProfiles(coords, id));
+    });
+  };
+};
+
 export function getProfiles(coords, id) { //This is the action called getProfiles
   return dispatch => {// This is where redux-thunk allows for async functions inside actions
     fetch(`${API_URL}/users/${id}`, {

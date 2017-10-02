@@ -10,7 +10,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import reducer from './reducer';
-import { getUserLocation } from './reducer/currentUser/actions';
+import { getUserLocation } from './reducer/profiles/actions';
 import { setCurrentUser } from './reducer/currentUser/actions';
 import { setUserId } from './reducer/currentUser/actions';
 
@@ -27,10 +27,14 @@ const store = createStore(reducer, composeEnhancers(
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 store.dispatch(setCurrentUser(currentUser.attributes));
 store.dispatch(setUserId(currentUser.id));
-if (currentUser.id) { //if there's a currentUser, update their location and call in nearby profiles
-  store.dispatch(getUserLocation(currentUser.id));
-}
+(currentUser.id) ? store.dispatch(getUserLocation(currentUser.id)) : console.log('no user');
 
+setInterval(function() { //if there's a currentUser, update their location and call in nearby profiles each minute
+  let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  if (currentUser.id) {
+    store.dispatch(getUserLocation(currentUser.id));
+  }
+}, 60000);
 
 // Create app
 const container = document.querySelector('#root');
