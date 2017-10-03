@@ -18,7 +18,7 @@ export function getUserLocation(id) {
 
 export function getProfiles(coords, id) { //This is the action called getProfiles
   return dispatch => {// This is where redux-thunk allows for async functions inside actions
-    fetch(`${API_URL}/users/${id}`, {
+    fetch(`${API_URL}/public/users/${id}`, {
       method: 'PUT',
       headers: {"Content-Type": "application/json"},
       mode: 'cors',
