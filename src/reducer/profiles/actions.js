@@ -27,11 +27,9 @@ export function getProfiles(coords, id) { //This is the action called getProfile
           attributes: coords
         }
       })
-    });
-    fetch(`${API_URL}/users`)
+    })
     .then(res => res.json())
-    .then(res => res.data)
-    .then(data => dispatch(setProfiles(data)))
+    .then(res => dispatch(setProfiles(res.data)));
   };
 }
 export function setProfiles(data) { //This action just passes the profiles back to the component which called it
