@@ -1,5 +1,3 @@
-import React, { Component } from 'react';
-
 export function mapbox(latLng) {
   var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 

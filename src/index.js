@@ -25,9 +25,11 @@ const store = createStore(reducer, composeEnhancers(
 
 // TODO: what's the best way to do this?
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-store.dispatch(setCurrentUser(currentUser.attributes));
-store.dispatch(setUserId(currentUser.id));
-(currentUser.id) ? store.dispatch(getUserLocation(currentUser.id)) : console.log('no user');
+if (currentUser.attributes) {
+  store.dispatch(setCurrentUser(currentUser.attributes));
+  store.dispatch(setUserId(currentUser.id));
+  store.dispatch(getUserLocation(currentUser.id));
+}
 
 setInterval(function() { //if there's a currentUser, update their location and call in nearby profiles each minute
   let currentUser = JSON.parse(localStorage.getItem('currentUser'));

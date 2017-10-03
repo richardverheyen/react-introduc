@@ -37,8 +37,6 @@ class CurrentUser extends Component {
   }
 
   render() {
-    const { currentUser } = this.state; //set currentUser from the store
-
     return (
     <section id="customise-user">
       <form onSubmit={this.handleFormSubmit}>
@@ -49,6 +47,7 @@ class CurrentUser extends Component {
             onChange={this.imageUpdated}
             name="image"
             value={this.state.image}
+            placeholder={JSON.parse(localStorage.getItem('currentUser')).attributes.image}
           />
         </div>
         <div>
@@ -58,6 +57,7 @@ class CurrentUser extends Component {
             onChange={this.taglineUpdated}
             name="tagline"
             value={this.state.tagline}
+            placeholder={JSON.parse(localStorage.getItem('currentUser')).attributes.tagline}
           />
         </div>
         <button type='submit' className='post-button'>Post up to the server</button>
