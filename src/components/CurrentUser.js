@@ -36,11 +36,12 @@ class CurrentUser extends Component {
     <section id="customise-user">
       <form onSubmit={this.handleFormSubmit}>
         <p>upload your image here:</p>
-        <div id="imageInput">
+        <div id="image-input">
           <input
             type="file"
             accept="image/*"
           />
+          <img src="/img/placeholder-user-photo.png"/>
         </div>
         <div>
           <p>upload your tagline here:</p>
@@ -59,7 +60,7 @@ class CurrentUser extends Component {
     )
   }
   componentDidMount() {
-    let imageInput = document.getElementById('imageInput');
+    let imageInput = document.getElementById('image-input');
     imageInput.addEventListener('change', PreviewImage);
 
     function PreviewImage() {
@@ -84,8 +85,11 @@ class CurrentUser extends Component {
 
     function validFileType(file) {
       for(var i = 0; i < fileTypes.length; i++) {
-        file.type === fileTypes[i] ? true : false;
+        if(file.type === fileTypes[i]) {
+          return true;
+        }
       }
+      return false;
     }
   }
 }
