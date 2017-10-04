@@ -26,9 +26,10 @@ export function postCurrentUser(attributes) {
 
       localStorage.setItem('currentUserId', userId);
       localStorage.setItem('currentUserAttributes', JSON.stringify(attributes));
+      // TODO: Make the AWS image save process
     });
-  }
-}
+  };
+};
 
 export function setCurrentUser(attributes) {
   return {

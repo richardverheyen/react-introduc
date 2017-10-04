@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { mapbox } from './Mapbox';
 
+
 class UserLocation extends Component {
 
   render() {
@@ -23,7 +24,5 @@ class UserLocation extends Component {
     }
   }
 }
-
-
 
 export default UserLocation;

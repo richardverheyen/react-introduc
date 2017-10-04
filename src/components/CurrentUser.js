@@ -26,9 +26,13 @@ class CurrentUser extends Component {
     event.preventDefault()
     const { sendToStore } = this.props;
 
-    sendToStore({
-      tagline: this.state.tagline
-    });
+    if (localStorage.getItem('currentUserImage')) {
+      sendToStore({
+        tagline: this.state.tagline
+      });
+    } else {
+      console.log('You need to upload an image too!');
+    }
   }
 
   render() {
@@ -41,7 +45,9 @@ class CurrentUser extends Component {
             type="file"
             accept="image/*"
           />
-          <img src="/img/placeholder-user-photo.png"/>
+          <img id="preview-image"
+               src={(localStorage.getItem('currentUserImage')) ? (localStorage.getItem('currentUserImage')) : "/img/placeholder-user-photo.png"}
+               alt="User profile"/>
         </div>
         <div>
           <p>upload your tagline here:</p>

@@ -7,9 +7,9 @@ export function imageUploader(){
   function PreviewImage() {
     let file = imageInput.childNodes[0].files[0];
     if (validFileType(file)) {
-      var imagePreview = document.createElement('img');
-      imagePreview.src = window.URL.createObjectURL(file);
-      imageInput.append(imagePreview);
+      let imagePreview = document.getElementById('preview-image');
+      let newSrc = window.URL.createObjectURL(file);
+      imagePreview.setAttribute('src', newSrc);
       console.log('passing to readFile')
       readFile(file);
     } else {
