@@ -10,17 +10,12 @@ class CurrentUser extends Component {
     super(props);
 
     this.state = {
-      image: '',
+      image: {},
       tagline: ''
     };
-    this.imageUpdated = this.imageUpdated.bind(this);
     this.taglineUpdated = this.taglineUpdated.bind(this);
   }
 
-  imageUpdated(e) {
-    const { value } = e.target;
-    this.setState({ image: value });
-  }
   taglineUpdated(e) {
     const { value } = e.target;
     this.setState({ tagline: value });
@@ -40,14 +35,11 @@ class CurrentUser extends Component {
     return (
     <section id="customise-user">
       <form onSubmit={this.handleFormSubmit}>
-        <div>
-          <p>upload your image here:</p>
+        <p>upload your image here:</p>
+        <div id="imageInput">
           <input
-            type="input"
-            onChange={this.imageUpdated}
-            name="image"
-            value={this.state.image}
-            placeholder={JSON.parse(localStorage.getItem('currentUser')).attributes.image}
+            type="file"
+            accept="image/*"
           />
         </div>
         <div>
@@ -65,6 +57,36 @@ class CurrentUser extends Component {
       <Link to={`/`} className="return"><img src="/img/arrow-down-big.svg" alt=""/></Link>
     </section>
     )
+  }
+  componentDidMount() {
+    let imageInput = document.getElementById('imageInput');
+    imageInput.addEventListener('change', PreviewImage);
+
+    function PreviewImage() {
+      let file = imageInput.childNodes[0].files[0];
+      if (validFileType(file)) {
+        var imagePreview = document.createElement('img');
+        imagePreview.src = window.URL.createObjectURL(file);
+        imageInput.append(imagePreview);
+      } else {
+        let para = document.createElement('p');
+        para.textContent = 'File name ' + file.name + ': Not a valid file type. Try a .jpg or .png instead.';
+        imageInput.appendChild(para);
+      }
+    }
+
+    var fileTypes = [
+      'image/jpeg',
+      'image/jpg',
+      'image/pjpeg',
+      'image/png'
+    ]
+
+    function validFileType(file) {
+      for(var i = 0; i < fileTypes.length; i++) {
+        file.type === fileTypes[i] ? true : false;
+      }
+    }
   }
 }
 
