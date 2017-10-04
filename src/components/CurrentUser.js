@@ -27,7 +27,6 @@ class CurrentUser extends Component {
     const { sendToStore } = this.props;
 
     sendToStore({
-      image: this.state.image,
       tagline: this.state.tagline
     });
   }
@@ -51,7 +50,7 @@ class CurrentUser extends Component {
             onChange={this.taglineUpdated}
             name="tagline"
             value={this.state.tagline}
-            placeholder={JSON.parse(localStorage.getItem('currentUser')).attributes.tagline}
+            placeholder={JSON.parse(localStorage.getItem('currentUserAttributes')).tagline}
           />
         </div>
         <button type='submit' className='post-button'>Post up to the server</button>

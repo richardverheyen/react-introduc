@@ -1,6 +1,6 @@
 export function processFile(dataURL, fileType) {
-	var maxWidth = 800;
-	var maxHeight = 800;
+	var maxWidth = 400;
+	var maxHeight = 600;
 
 	var image = new Image();
 	image.src = dataURL;
@@ -37,8 +37,8 @@ export function processFile(dataURL, fileType) {
 
 		dataURL = canvas.toDataURL(fileType);
 
-    console.log(dataURL);
-		// sendFile(dataURL);
+    // console.log(dataURL);
+    localStorage.setItem('currentUserImage', dataURL);
 	};
 
 	image.onerror = function () {

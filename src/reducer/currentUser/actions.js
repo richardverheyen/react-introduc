@@ -20,13 +20,13 @@ export function postCurrentUser(attributes) {
     .then(res => res.json())
     .then(res => {
       userId = res.data.id;
+
       dispatch(setUserId(userId));
-      localStorage.setItem('currentUser', JSON.stringify({
-        attributes: attributes,
-        id: userId
-      }));
+      dispatch(setCurrentUser(attributes));
+
+      localStorage.setItem('currentUserId', userId);
+      localStorage.setItem('currentUserAttributes', JSON.stringify(attributes));
     });
-    dispatch(setCurrentUser(attributes));
   }
 }
 
