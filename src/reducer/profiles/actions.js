@@ -29,9 +29,12 @@ export function getProfiles(coords, id) { //This is the action called getProfile
       })
     })
     .then(res => res.json())
-    .then(res => dispatch(setProfiles(res.data)));
-  };
-}
+    .then(res => dispatch(setProfiles(res.data)))
+    .catch(function(error) {
+      console.log('There has been a problem with your fetch operation: ' + error.message);
+    });
+  }
+};
 export function setProfiles(data) { //This action just passes the profiles back to the component which called it
   return {
     type: SET_PROFILES, //this refers back to the 'action type' defined above

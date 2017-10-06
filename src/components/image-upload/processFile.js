@@ -39,6 +39,7 @@ export function processFile(dataURL, fileType) {
 
     // console.log(dataURL);
     localStorage.setItem('currentUserImage', dataURL);
+		return dataURL;
 	};
 
 	image.onerror = function () {

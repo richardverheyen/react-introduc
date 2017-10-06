@@ -1,3 +1,4 @@
+import { API_URL } from '../../constants';
 import { readFile } from './readFile';
 
 export function imageUploader(){
@@ -10,8 +11,10 @@ export function imageUploader(){
       let imagePreview = document.getElementById('preview-image');
       let newSrc = window.URL.createObjectURL(file);
       imagePreview.setAttribute('src', newSrc);
-      console.log('passing to readFile')
-      readFile(file);
+console.log(file);
+      let croppedImageData = readFile(file);
+      let signedS3 = getSignedRequest(file);
+
     } else {
       let para = document.createElement('p');
       para.textContent = 'File name ' + file.name + ': Not a valid file type. Try a .jpg or .png instead.';
@@ -33,5 +36,15 @@ export function imageUploader(){
       }
     }
     return false;
+  }
+
+  function getSignedRequest(file) {
+    return fetch(`${API_URL}/signer?fileName=${file.name}&fileType=${file.type}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`${response.status}: ${response.statusText}`);
+        }
+        return response.json();
+      });
   }
 }
