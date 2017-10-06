@@ -13,15 +13,8 @@ class UserLocation extends Component {
   }
 
   componentDidMount() {
-    let latLng = {lat: 3, lng: 1};
-    if (navigator.geolocation) {
-      return navigator.geolocation.getCurrentPosition(position => {
-        latLng = {lat: position.coords.latitude, lng: position.coords.longitude};
-        mapbox(latLng);
-      });
-    } else {
-      console.warn('This browser does not support HTML5 geolocation.');
-    }
+    let latLng = JSON.parse(localStorage.getItem('coords'));
+    mapbox(latLng);
   }
 }
 

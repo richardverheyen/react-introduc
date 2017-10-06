@@ -1,5 +1,4 @@
 import { API_URL } from '../../constants';
-
 export const SET_PROFILES = 'SET_PROFILES'; //This is the constant or 'action' which is used by the reducer
 //An action is a plain object describing what happened.
 
